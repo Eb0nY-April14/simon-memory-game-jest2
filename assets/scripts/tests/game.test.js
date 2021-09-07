@@ -135,7 +135,7 @@ describe("gameplay works correctly", () => {
         game.turnNumber = 42;
         showTurns();    // When we call this function, it should reset the turnNumber
         expect(game.turnNumber).toBe(0);
-    })
+    });
     /* This test checks if the score increments if the turn/move is correct    */
     test("should increment the score if the turn/move is correct", () => {
         /* Here, we'll take the turn we added in our beforeEach() function of our gameplay & push it 
@@ -144,12 +144,25 @@ describe("gameplay works correctly", () => {
         game.playerMoves.push(game.currentGame[0]);
         playerTurn();
         expect(game.score).toBe(1);  //After calling the playerTurn() function on line 138, we expect the score to have increased.
-    })
-
+    });
     test("should call an alert if the move is wrong", () => {
         game.playerMoves.push("wrong"); // It'll push a string that says "wrong" into our playerMoves array instead of pushing the correct move.
         playerTurn();
         /* From the code on line 153 below, We are expecting an alert box to be called/displayed with the text "Wrong move!" */
         expect(window.alert).toBeCalledWith("Wrong move!");  // Since we are spying on our alert function, we'll see when it's called & what parameters it's called with. 
-    })
+    });
+    /* This test should set turnInProgress to true when the computer is showing/taking its turn. */
+    test("should toggle turnInProgress to true", () => {
+        showTurns();    // We call this function so we know that the computer's game is in progress.
+        expect(game.turnInProgress).toEqual(true); // or we can use .toBe(true) in place of .toEqual()
+    });
+    test("clicking during computer sequence should fail", () => {
+        showTurns(); // calling this function starts the computer sequence 
+        game.lastButton = ""; // it resets the game.lastButton key to empty
+        /* What line 165 does is that it should not set a value of game.lastButton when the click function 
+        is called on any of our buttons, in this case, the ID chosen is button2. There should be no ID in 
+        there if my clicks are disabled. */
+        document.getElementById("button2").click();
+        expect(game.lastButton).toEqual(""); // Here, the content of lastButton shouldn't change after we clear it if clicks are disabled.
+    });
 });
