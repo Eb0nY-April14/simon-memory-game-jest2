@@ -1,0 +1,22 @@
+{
+  "name": "simon-memory-game-jest2",
+  "version": "1.0.0",
+  "description": "![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eb0nY-April14/simon-memory-game-jest2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eb0nY-April14/simon-memory-game-jest2/issues"
+  },
+  "homepage": "https://github.com/Eb0nY-April14/simon-memory-game-jest2#readme",
+  "devDependencies": {
+    "jest": "^27.1.0"
+  }
+}

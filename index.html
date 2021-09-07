@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jest Simon Game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">    <!-- Here, we imported our css file -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>simon</h1>
+        <h2>memory game</h2>
+    </div>
+    <div class="container">
+        <!-- Each of our game buttons is one of these concentric circles below totalling 4 buttons.
+        There are 2 classes in each of the circle buttons, the 1st class is the general circle class 
+        common to all 4 & then the more specific ones that control the size & colour of each circle.
+        Each of the 4 divs also has a 'data-listener' custom attribute set to 'false' initially. 
+        In JS, there's no standard way of testing if an event listener has been attached to an element 
+        but to go around this issue, we use the data-listener custom attribute.This will enable us to 
+        test if an event listener has been attached to any of the circle & update the data-listener custom 
+        attribute to true if it has. -->
+        <div data-listener="false" class="circle circle1" id="button1"></div>
+        <div data-listener="false" class="circle circle2" id="button2"></div>
+        <div data-listener="false" class="circle circle3" id="button3"></div>
+        <div data-listener="false" class="circle circle4" id="button4"></div>
+        <div class="scorebox" id="score">0</div>
+        <button class="button" onclick="newGame()">new game</button>
+    </div>
+    <script src="assets/scripts/game.js"></script> <!-- Here, we imported our JavaScript script file -->
+</body>
+
+</html>
