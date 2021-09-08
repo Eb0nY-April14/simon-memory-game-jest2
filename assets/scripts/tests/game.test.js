@@ -53,6 +53,21 @@ describe("game object contains correct keys", () => {
     test("turnNumber key exists", () => {
         expect("turnNumber" in game).toBe(true);  // this expects turnNumber to be a property in the game object in game.js file
     });
+    /* TEST 7: This tests if the lastButton key exists in the game object in our 'game.js' file. */ 
+    test("lastButton key exists", () => {
+        //game.lastButton = "";
+        expect("lastButton" in game).toBe(true);
+    });
+    /* TEST 8: This tests if the turnInProgress key exists in the game object in our 'game.js' file. */ 
+    test("turnInProgress key exists", () => {
+        //game.turnInProgress = false;
+        expect("turnInProgress" in game).toBe(true);
+    }); 
+    /* TEST 9: This tests if the default value of the turnInProgress key is false. */ 
+    test("turnInProgress key value is false", () => {
+        //game.turnInProgress = false;
+        expect("turnInProgress" in game).toBe(true);
+    }); 
 }); // end of 1st describe test
 
 describe("newGame works correctly", () => {

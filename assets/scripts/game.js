@@ -2,7 +2,9 @@ let game = {    // This creates a new game object with a score property/attribut
     score: 0,
     currentGame: [],
     playerMoves: [],
-    turnNumber: 0,
+    turnNumber: 0,  // this is a default value
+    lastButton: "",  // this is a default value
+    turnInProgress: false,  // this is a default value
     choices: ["button1", "button2", "button3", "button4"],
 }
 
